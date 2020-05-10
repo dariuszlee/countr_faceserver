@@ -18,11 +18,6 @@
     <maven.compiler.target>1.8</maven.compiler.target>
 
     <nd4j.version>1.0.0-beta2</nd4j.version>
-    <tensorflow.version>1.0.0-beta6</tensorflow.version>
-    <javacpp-presets.version>1.4.2</javacpp-presets.version>
-    <mkl.version>2018.3</mkl.version>
-    <mkl-dnn.version>0.15</mkl-dnn.version>
-    <jmh.version>1.21</jmh.version>
     <apache.commons>1.17</apache.commons>
     <spring-framework.version>5.0.7.RELEASE</spring-framework.version>
 </properties>

@@ -8,3 +8,7 @@ nuaa/
 target/
 logs/
 face.db
+output/
+tensor_model/
+arc_res50_ccrop/
+proto_tensorflow/
