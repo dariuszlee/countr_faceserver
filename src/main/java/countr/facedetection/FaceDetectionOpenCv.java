@@ -14,16 +14,19 @@ import org.opencv.core.MatOfRect;
 import org.opencv.core.Size;
 import org.opencv.objdetect.CascadeClassifier;
 import org.opencv.objdetect.Objdetect;
-
+import org.springframework.core.io.DefaultResourceLoader;
+import org.springframework.core.io.ResourceLoader;
 import org.opencv.imgproc.Imgproc;
 
 public class FaceDetectionOpenCv {
     private CascadeClassifier faceCascade;
     private int size;
 
-    public FaceDetectionOpenCv(int size){
+    public FaceDetectionOpenCv(int size) throws IOException {
         this.faceCascade = new CascadeClassifier();
-        this.faceCascade.load("/home/dzly/projects/countr_face_recognition/faceserver/src/main/resources/haar_cascade.xml");
+		ResourceLoader resourceLoader = new DefaultResourceLoader();
+        String path = resourceLoader.getResource("classpath:/haar_cascade.xml").getFile().getAbsolutePath();
+        this.faceCascade.load(path);
         this.size = size;
     }    
 
