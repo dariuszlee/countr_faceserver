@@ -38,7 +38,6 @@ public class FaceDetectionOpenCvTest {
         }
 
         BufferedImage foundImage = detector.detect(img);
-        System.out.println("DARIUS " + foundImage);
         try{
             ImageIO.write(foundImage, "png", new File("./test.png"));
         } catch (IOException e) {

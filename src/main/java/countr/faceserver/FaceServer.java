@@ -37,7 +37,7 @@ import countr.common.RecognitionMessage.MessageType;
 import countr.common.RecognitionResult;
 import countr.common.ServerResult;
 import countr.common.VerifyResult;
-import countr.utils.ComputeUtils;
+import countr.common.ComputeUtils;
 import countr.utils.DebugUtils;
 
 

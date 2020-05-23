@@ -32,18 +32,15 @@ public class FaceDetectionOpenCv {
         MatOfRect faces = new MatOfRect();
 
         faceCascade.detectMultiScale(inputImageMat, faces, 1.1, 2, 0 | Objdetect.CASCADE_SCALE_IMAGE, new Size(this.size, this.size), new Size());
-        System.out.println("DARIUS" + faces.toArray()[0].toString());
 
-         
+        if(faces.empty()){
+            return null;
+        }
+
         Mat cropped = new Mat(this.size, this.size, 0);
         Imgproc.resize(new Mat(inputImageMat, faces.toArray()[0]), cropped, new Size(this.size, this.size));
 
         BufferedImage outputImage = matToBufferedImage(cropped);
-        try{
-            ImageIO.write(outputImage, "png", new File("./test.png"));
-        } catch (IOException e) {
-            System.out.println("Can't read image" + e);
-        }
         return outputImage;
     }
             
