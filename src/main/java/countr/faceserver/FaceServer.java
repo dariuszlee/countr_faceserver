@@ -26,6 +26,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import countr.common.FaceDatabase;
 import countr.common.FaceDetection;
+import countr.facedetection.FaceDetectionOpenCv;
 import countr.common.FaceEmbedding;
 import countr.common.MXNetUtils;
 import countr.common.EmbeddingResponse;
@@ -41,8 +42,10 @@ import countr.utils.DebugUtils;
 
 
 public class FaceServer implements IFaceServer{
+    private final int sizeForRecognizer;
     private final MXNetUtils resnet100;
-    private final FaceDetection faceDetector;
+    // private final FaceDetection faceDetector;
+    private final FaceDetectionOpenCv faceDetector;
     private final int port;
     private final ZContext zContext;
     private final FaceDatabase faceDb; 
@@ -61,8 +64,9 @@ public class FaceServer implements IFaceServer{
         String modelPath = modelDirString +  "model";
 
 
+        this.sizeForRecognizer = 112;
         this.resnet100 = new MXNetUtils(isGpu, modelPath);
-        this.faceDetector = new FaceDetection(isDebug);
+        this.faceDetector = new FaceDetectionOpenCv(this.sizeForRecognizer);
         this.port = port;
         this.zContext = new ZContext();
 
@@ -121,7 +125,9 @@ public class FaceServer implements IFaceServer{
                     }
                 }
                 catch (Exception ex) {
-
+                    System.out.println("Unknown failure in message. Exception is: " + ex);
+                    ex.printStackTrace();
+                    response = new ServerResult(false);
                 }
 
                 // Send a response
@@ -153,7 +159,7 @@ public class FaceServer implements IFaceServer{
         }
         catch (ArrayIndexOutOfBoundsException ex){
             this.log.warn("There are no match results.");
-            this.log.warn("Embeddings: " + embeddings);
+            // this.log.warn("Embeddings: " + embeddings);
             this.log.warn(ex.toString());
             return new VerifyResult(null, false, "No recognition results.");
         }

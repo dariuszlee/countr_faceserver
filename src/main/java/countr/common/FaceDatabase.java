@@ -75,6 +75,7 @@ public class FaceDatabase {
             pstmt.executeUpdate();
         }
         catch(Exception e){
+            System.out.println("Error writing to database: " + id + " " + groupId);
         }
     }
 
@@ -100,6 +101,7 @@ public class FaceDatabase {
             pstmt.executeUpdate();
         }
         catch(Exception e){
+            System.out.println("Error writing to database: " + id + " " + groupId);
         }
     }
 

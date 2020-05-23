@@ -39,7 +39,6 @@ public class MXNetUtils {
         else {
             this.ctx.add(Context.cpu()); // Choosing CPU Context here
         }
-
         this.resnet100 = generatePredictor(modelPath);
     }
 
@@ -63,11 +62,6 @@ public class MXNetUtils {
         List<NDArray> res = this.resnet100.predictWithNDArray(imgs);
         return this.converNdArray(res.get(0));
     }
-
-    // private org.nd4j.linalg.cpu.nativecpu.NDArray converNdArray(NDArray feature){
-    //     float[] featureAsArray = feature.toArray();
-    //     return new org.nd4j.linalg.cpu.nativecpu.NDArray(featureAsArray);
-    // }
 
     private float[] converNdArray(NDArray feature){
         return feature.toArray();

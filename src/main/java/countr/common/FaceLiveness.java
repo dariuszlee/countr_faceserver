@@ -12,7 +12,6 @@ public class FaceLiveness {
     public FaceLiveness() throws IOException {
         try {
             String path = "../Face-Liveness-Detection/models/anandfinal.hdf5";
-            // FileInputStream modelStream = new FileInputStream(new File("../Face-Liveness-Detection/models/anandfinal.hdf5"));
             faceLivenessNetwork = KerasModelImport.importKerasSequentialModelAndWeights(path);
         }
         catch (IOException e){
