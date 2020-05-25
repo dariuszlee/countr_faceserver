@@ -1,3 +1,13 @@
+# Building for CountR Board
+
+1. Build and compile MXNET
+
+    a. Clone incubator-mxnet
+
+    b. sudo apt-get install libopenblas-dev liblapack-dev libblas-dev libatlas-base-dev libjemalloc-dev libc6-dev-i386 ninja-build cmake
+
+    c. cmake -DUSE_CUDA=0 -DCMAKE_BUILD_TYPE=Release -DUSE_OPENCV=0 -DUSE_F16C -DUSE_MKLDNN=0 -DBLAC=Atlas -GNinja ..
+
 ## Run Time Server
 
 1. mvn clean && mvn package && mvn exec:java -PServer
