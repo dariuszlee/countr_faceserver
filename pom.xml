@@ -21,20 +21,6 @@
     <apache.commons>1.17</apache.commons>
     <spring-framework.version>5.0.7.RELEASE</spring-framework.version>
 </properties>
-<repositories>
-    <!-- <repository> -->
-    <!--     <id>sonatype-nexus-snapshots</id> -->
-    <!--     <name>Sonatype Nexus Snapshots</name> -->
-    <!--     <url>https://oss.sonatype.org/content/repositories/snapshots</url> -->
-    <!--     <releases> -->
-    <!--         <enabled>false</enabled> -->
-    <!--     </releases> -->
-    <!--     <snapshots> -->
-    <!--         <enabled>true</enabled> -->
-    <!--         <updatePolicy>daily</updatePolicy>  <!-1- Optional, update daily -1-> -->
-    <!--     </snapshots> -->
-    <!-- </repository> -->
-</repositories>
 
 <dependencies>
     <dependency> 
@@ -78,15 +64,10 @@
         <artifactId>jeromq</artifactId>
         <version>0.5.2</version>
     </dependency>
-    <!-- <dependency> -->
-    <!--     <groupId>org.countr</groupId> -->
-    <!--     <artifactId>mtcnn</artifactId> -->
-    <!--     <version>0.0.4</version> -->
-    <!-- </dependency> -->
     <dependency> 
         <groupId>org.apache.mxnet</groupId> 
-        <artifactId>mxnet-full_2.11-linux-x86_64-cpu</artifactId> 
-        <version>1.5.1</version> 
+        <artifactId>mxnet-full_2.11</artifactId> 
+        <version>INTERNAL</version> 
     </dependency>
     <dependency>
         <groupId>org.datavec</groupId>
