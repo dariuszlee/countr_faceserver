@@ -59,7 +59,11 @@ public class MXNetUtils {
         List<NDArray> imgs = new ArrayList<NDArray>();
         imgs.add(img);
 
+
+        long startTime = System.nanoTime();
         List<NDArray> res = this.resnet100.predictWithNDArray(imgs);
+        long endTime = System.nanoTime();
+        System.out.println("Image detection time " + (endTime - startTime)/1000000);
         return this.converNdArray(res.get(0));
     }
 

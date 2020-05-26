@@ -1,6 +1,8 @@
 package countr.facedetection;
 
 import java.awt.image.DataBufferByte;
+import org.springframework.core.io.DefaultResourceLoader;
+import org.springframework.core.io.ResourceLoader;
 import java.io.File;
 import java.io.IOException;
 
