@@ -65,6 +65,11 @@
         <version>0.5.2</version>
     </dependency>
     <dependency> 
+        <groupId>org.countr</groupId> 
+        <artifactId>mtcnn</artifactId> 
+        <version>0.0.4</version> 
+    </dependency>
+    <dependency> 
         <groupId>org.apache.mxnet</groupId> 
         <artifactId>mxnet-full_2.11</artifactId> 
         <version>INTERNAL</version> 

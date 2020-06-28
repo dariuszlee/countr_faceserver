@@ -44,8 +44,8 @@ import countr.utils.DebugUtils;
 public class FaceServer implements IFaceServer{
     private final int sizeForRecognizer;
     private final MXNetUtils resnet100;
-    // private final FaceDetection faceDetector;
-    private final FaceDetectionOpenCv faceDetector;
+    private final FaceDetection faceDetector;
+    // private final FaceDetectionOpenCv faceDetector;
     private final int port;
     private final ZContext zContext;
     private final FaceDatabase faceDb; 
@@ -66,7 +66,8 @@ public class FaceServer implements IFaceServer{
 
         this.sizeForRecognizer = 112;
         this.resnet100 = new MXNetUtils(isGpu, modelPath);
-        this.faceDetector = new FaceDetectionOpenCv(this.sizeForRecognizer);
+        // this.faceDetector = new FaceDetectionOpenCv(this.sizeForRecognizer);
+        this.faceDetector = new FaceDetection(false, 300, 400);
         this.port = port;
         this.zContext = new ZContext();
 
