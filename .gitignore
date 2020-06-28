@@ -14,5 +14,5 @@ arc_res50_ccrop/
 proto_tensorflow/
 onnx-to-keras/
 tensor_freezer.py
-model-r34*
 faceliveness-model/
+model-r34*
