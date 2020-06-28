@@ -26,10 +26,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MXNetUtils {  
-    private static Shape inputShape = new Shape(new int[]{1, 3, 112, 112});
+    protected static Shape inputShape = new Shape(new int[]{1, 3, 112, 112});
 
-    private List<Context> ctx;
-    private Predictor resnet100;
+    protected List<Context> ctx;
+    protected Predictor resnet100;
 
     public MXNetUtils(boolean isGpu, String modelPath) {
         this.ctx = new ArrayList<>();
@@ -59,7 +59,11 @@ public class MXNetUtils {
         List<NDArray> imgs = new ArrayList<NDArray>();
         imgs.add(img);
 
+
+        long startTime = System.nanoTime();
         List<NDArray> res = this.resnet100.predictWithNDArray(imgs);
+        long endTime = System.nanoTime();
+        System.out.println("Image detection time " + (endTime - startTime)/1000000);
         return this.converNdArray(res.get(0));
     }
 

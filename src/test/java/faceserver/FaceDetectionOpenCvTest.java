@@ -19,6 +19,7 @@ public class FaceDetectionOpenCvTest {
 
     public FaceDetectionOpenCvTest() {
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+        System.out.println("OPENCV " + Core.NATIVE_LIBRARY_NAME);
         try {
             detector = new FaceDetectionOpenCv(128);
         }
