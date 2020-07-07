@@ -21,7 +21,7 @@ import java.io.File;
 public class FaceLiveness extends MXNetUtils {
 
     public FaceLiveness(boolean isGpu, String modelPath) {
-      super(isGpu, modelPath);
+      super(isGpu, modelPath, "/conv2d_1_input1", new int[] {1, 3, 128, 128});
     }        
 
     public void status(){
@@ -41,7 +41,9 @@ public class FaceLiveness extends MXNetUtils {
       imgs.add(img);
 
       List<NDArray> res = this.resnet100.predictWithNDArray(imgs);
-      System.out.println(res.get(0));
-      return false;
+      float[] realnessPercentages = res.get(0).toArray(); 
+      float realPercent = realnessPercentages[0];
+      float fakePercent = realnessPercentages[1];
+      return realPercent > fakePercent;
     }
 }
