@@ -22,7 +22,9 @@ Here are some steps to do it. This isn't versioned and the file may become unava
 1. Go to link
 https://github.com/deepinsight/insightface/wiki/Model-Zoo
 
-2. Download 3.3 LResNet34E-IR
+2. Download Face Recognition: 3.3 LResNet34E-IR
+
+3. Download Face Liveness model from here: https://drive.google.com/drive/folders/1AdfM_qC8NrxP1FuTyirNOU_cQ6IQlWXO?usp=sharing
 
 ## Dependencies
 
