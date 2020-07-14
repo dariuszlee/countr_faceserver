@@ -18,9 +18,11 @@
 
 Model is too large to have on GitHub. We must download and put it to the right location.
 Here are some steps to do it. This isn't versioned and the file may become unavailable at some point. Contact dariuszlee@outlook.com if a backup version is required.
-1. wget https://www.dropbox.com/s/tj96fsm6t6rq8ye/model-r100-arcface-ms1m-refine-v2.zip?dl=0 -O model-r100.zip
-2. unzip model-r100.zip
-3. mv model-r100-ii src/main/resources
+
+1. Go to link
+https://github.com/deepinsight/insightface/wiki/Model-Zoo
+
+2. Download 3.3 LResNet34E-IR
 
 ## Dependencies
 
