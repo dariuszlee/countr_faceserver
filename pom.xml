@@ -24,7 +24,7 @@
     <mkl-dnn.version>0.15</mkl-dnn.version>
     <jmh.version>1.21</jmh.version>
     <apache.commons>1.17</apache.commons>
-    <spring-framework.version>5.0.7.RELEASE</spring-framework.version>
+    <spring-framework.version>5.3.18</spring-framework.version>
 </properties>
 <repositories>
     <!-- <repository> -->
